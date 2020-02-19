@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5999}/${DB_NAME:postgres}?currentSchema=${DB_SCHEMA:articles}
+    username: ${DB_USER:dummy}
+    password: ${DB_PASSWORD:dummy}
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    open-in-view: false
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  servlet:
+    context-path: /articles
+  port: ${ARTICLES_PORT:9999}
+ 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_REGISTRY:localhost}:${EUREKA_REGISTRY_PORT:7777}/eureka
+
+feign:
+  hystrix:
+    enabled: true

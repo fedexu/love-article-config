@@ -1,0 +1,2 @@
+server:
+  port: ${EUREKA_REGISTRY_PORT:7777}

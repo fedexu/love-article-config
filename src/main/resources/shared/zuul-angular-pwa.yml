@@ -1,0 +1,8 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_REGISTRY:localhost}:${EUREKA_REGISTRY_PORT:7777}/eureka
+
+server:
+  port: ${ZUUL_ANGULAR_PWA_PORT:4200}
+
