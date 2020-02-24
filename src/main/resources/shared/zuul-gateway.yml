@@ -17,11 +17,11 @@ zuul:
     socket-timeout-millis: ${ZUUL_GATEWAY_TIMEOUT:5000}
 
   routes:
-#    auth-service:
-#        path: /uaa/**
-#        url: http://auth-service:5000
-#        stripPrefix: false
-#        sensitiveHeaders:
+    auth-service:
+        path: /auth/**
+        url: auth-jwt
+        stripPrefix: false
+        sensitiveHeaders: Cookie,Set-Cookie
 
     articles-service:
         path: /articles/**
@@ -43,6 +43,7 @@ zuul:
 
 eureka:
   client:
+    fetchRegistry: true
     service-url:
       defaultZone: http://${EUREKA_REGISTRY:localhost}:${EUREKA_REGISTRY_PORT:7777}/eureka
 

@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5002}/${DB_NAME:postgres}?currentSchema=${DB_SCHEMA:favorites}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5000}/${DB_NAME:postgres}?currentSchema=${DB_SCHEMA:auth}
     username: ${DB_USER:dummy}
     password: ${DB_PASSWORD:dummy}
   jpa:
@@ -17,14 +17,12 @@ spring:
 
 server:
   servlet:
-    context-path: /favorites
-  port: ${FAVORITES_PORT:11111}
- 
+    context-path: /auth
+  port: ${AUTH_PORT:9000}
+
 eureka:
   client:
     service-url:
       defaultZone: http://${EUREKA_REGISTRY:localhost}:${EUREKA_REGISTRY_PORT:7777}/eureka
 
-feign:
-  hystrix:
-    enabled: true
+
