@@ -46,6 +46,13 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://${EUREKA_REGISTRY:localhost}:${EUREKA_REGISTRY_PORT:7777}/eureka
+      
+spring:
+  zipkin:
+    base-url: base-url: http://${ZIPKIN_LOG:localhost}:${ZIPKIN_LOG_PORT:9411}/
+  sleuth:
+    sampler:
+      probability: 1
 
 server:
   port: ${ZUUL_GATEWAY_PORT:4000}

@@ -13,6 +13,11 @@ spring:
     show-sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  zipkin:
+    base-url: http://${ZIPKIN_LOG:localhost}:${ZIPKIN_LOG_PORT:9411}/
+  sleuth:
+    sampler:
+      probability: 1
 
 server:
   servlet:
