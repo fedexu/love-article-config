@@ -20,19 +20,19 @@ zuul:
     auth-service:
         path: /auth/**
         url: auth-jwt
-        stripPrefix: false
+        stripPrefix: true
         sensitiveHeaders: Cookie,Set-Cookie
 
     articles-service:
         path: /articles/**
         serviceId: articles-service
-        stripPrefix: false
+        stripPrefix: true
         sensitiveHeaders:
         
     favorites-service:
         path: /favorites/**
         serviceId: favorites-service
-        stripPrefix: false
+        stripPrefix: true
         sensitiveHeaders:
         
     zuul-angular-pwa:

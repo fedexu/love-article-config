@@ -1,0 +1,23 @@
+spring:
+  boot:
+    admin:
+      discovery:
+        ignored-services: zuul-gateway
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${EUREKA_REGISTRY:localhost}:${EUREKA_REGISTRY_PORT:7777}/eureka
+      
+server:
+  port: ${ADMIN_PORT:7766}
+  
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

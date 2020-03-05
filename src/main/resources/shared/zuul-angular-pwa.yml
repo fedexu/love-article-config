@@ -5,4 +5,11 @@ eureka:
 
 server:
   port: ${ZUUL_ANGULAR_PWA_PORT:4200}
+  
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 

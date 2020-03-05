@@ -19,11 +19,14 @@ spring:
     sampler:
       probability: 1
 
-
 server:
-  servlet:
-    context-path: /auth
   port: ${AUTH_PORT:9000}
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  
 
 eureka:
   client:
