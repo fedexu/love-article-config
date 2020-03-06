@@ -15,7 +15,6 @@ eureka:
 server:
   port: ${ADMIN_PORT:7766}
   
-  
 management:
   endpoints:
     web:
